@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+#logo{
+    margin-left: 10px;
+    align-self: center;
+    width: 40vh;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 50px;
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    font-variation-settings:
+        "wdth" 100;
+}
+#nav-bar{
+    align-content: center;
+    align-items: center;
+
+    display: grid inline;
+    grid-template-columns: repeat(4, 1fr);
+}
+#nav-buttons{
+    button{
+        border: none;
+        background-color: transparent;
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 10px;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+    button:hover{
+        text-shadow: -1px -1px 0 #ceff5b, 1px -1px 0 #ceff5b, -1px 1px 0 #ceff5b, 1px 1px 0 #ceff5b;
+    }
+    
+}
+body{
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main sidebar"
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 5fr 1fr;
+}
+header{
+    grid-area: header;
+    background-color: hwb(135 57% 3%);
+
+}
+main{ 
+    grid-area: main;
+    background-color: rgba(202, 247, 217, 0.877);
+}
+
+aside{
+    grid-area: sidebar;
+    background-color: rgb(135, 224, 162);
+}
+footer{
+    ul{
+        list-style-type: none;
+        padding: 0;
+    }
+    grid-area: footer;
+    background-color: hwb(135 57% 3%);
+    display: grid;
+    grid-template-areas: 
+        "links socials"
+        "copyright copyright";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+#socials{
+    grid-area: socials;
+    background: #fff;
+    color: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#links {
+    grid-area: links;
+    background: #fff;
+    color: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+ #copyright {
+
+    grid-area: copyright;
+    color: white;
+    padding: 10px;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+ }

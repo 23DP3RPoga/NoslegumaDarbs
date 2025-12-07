@@ -1,0 +1,16 @@
+Uzdevums: Izveidot pamata HTML tīmekļa vietnes struktūru ar galveno sadaļu, header, footer, navigācijas izvēlni un dažiem vienkāršiem elementiem.
+
+Instrukcijas:
+
+    
+Izveido jaunu HTML failu, piemēram, index.html.
+Galvene (<header>):
+•    Pievieno header ar vietnes nosaukumu un navigācijas izvēlni, kas sastāv no saitēm uz “Home”, “About”, un “Contact” sadaļām.
+Galvenā sadaļa (<main>):
+•    Izveido galveno sadaļu ar vienu vai diviem virsrakstiem (<h1>, <h2>), īsu tekstu (<p>), un vienu attēlu (<img>).
+Sānu josla (<aside>):
+•    Pievieno sānu joslu ar īsu tekstu vai papildu informāciju, piemēram, saistītu rakstu sarakstu.
+Kājene (<footer>):
+•    Izveido footer ar pamatinformāciju, piemēram, autortiesību paziņojumu, un sociālo tīklu saites.
+Piešķir stilu ar CSS (pēc izvēles):
+•    Vari pievienot pamata CSS, lai stilizētu header, navigācijas joslu, galveno saturu, aside un footer. To var izdarīt vai nu pašā HTML failā, izmantojot <style>, vai izveidojot atsevišķu CSS failu.
