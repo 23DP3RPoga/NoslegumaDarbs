@@ -5,6 +5,10 @@
 html {
     height: 100%;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 #logo{
     margin-left: 10px;
     align-self: center;
@@ -20,13 +24,6 @@ html {
     font-variation-settings:
         "wdth" 100;
 }
-#nav-bar{
-    align-content: center;
-    align-items: center;
-
-    display: grid inline;
-    grid-template-columns: repeat(4, 1fr);
-}
 #nav-buttons{
     button{
         border: none;
@@ -40,7 +37,7 @@ html {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     }
     button:hover{
-        text-shadow: -1px -1px 0 #ceff5b, 1px -1px 0 #ceff5b, -1px 1px 0 #ceff5b, 1px 1px 0 #ceff5b;
+        text-shadow: -1px -1px 0 #3C6FE8, 1px -1px 0 #3C6FE8, -1px 1px 0 #3C6FE8, 1px 1px 0 #3C6FE8;
     }
     
 }
@@ -49,69 +46,141 @@ body{
     display: grid;
     grid-template-areas: 
         "header header"
-        "main sidebar"
+        "main main"
         "footer footer";
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 5fr 1fr;
 }
 header{
+    height: 10vh;
+    position: sticky;
+    top: 0;
     grid-area: header;
-    background-color: hwb(135 57% 3%);
-
+    background-color: #3C6FE8;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+     "logo-container nav-buttons";
 }
+
 main{ 
     grid-area: main;
-    background-color: rgba(202, 247, 217, 0.877);
+    background-color:#FAFAFD;
 }
-
-aside{
-    grid-area: sidebar;
-    background-color: rgb(135, 224, 162);
+#hero-section{
+    height: 100vh;
+    background-color: #FAFAFD;
+    display: grid;
+    grid-template-areas:
+        "hero-text hero-image";
+    #hero-text{ 
+        grid-area: hero-text;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        h1{
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+        p{
+            font-size: 24px;
+            color: #555;
+        }
+    #hero-image{
+    margin: auto;
 }
+}
+}
+#card-section{
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    grid-template-areas:
+        "card1 card2 card3"; 
+}
+.card{
+    background: #fff;
+    color: #111;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "title"    
+    "image"
+    "description"
+    "button";
+    gap: 0.5rem;
+    margin: 1rem;
+    width: 300px;
+    align-items: center;
+    img{
+        width: 100%;
+        border-radius: 8px;
+    }
+    &:hover{
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        animation: cardHover 0.3s forwards;
+    }
+    button{
+        border: none;
+        background-color: #3C6FE8;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        &:hover{
+            background-color: #1D2F5B;
+            transition: background-color 0.3s ease;
+        }
+    }
+}
+        @keyframes cardHover {
+            100% {
+                transform: translateY(-5px);
+            }
+        }
+        
 footer{
     ul{
         list-style-type: none;
         padding: 0;
     }
     grid-area: footer;
-    background-color: hwb(135 57% 3%);
+    background-color:#1D2F5B ;
     display: grid;
     grid-template-areas: 
         "links socials"
         "copyright copyright";
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1r 1fr;
     grid-template-rows: auto auto;
     gap: 1rem;
     padding: 1rem;
     align-items: center;
-}
-
-#socials{
-    grid-area: socials;
-    background: #fff;
-    color: #111;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-#links {
+    #links {
     grid-area: links;
     background: #fff;
     color: #111;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
     gap: 0.5rem;
-}
-
- #copyright {
-
+    }
+    #socials{
+        grid-area: socials;
+        background: #fff;
+        color: #111;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        gap: 0.5rem;
+    }
+#copyright {
     grid-area: copyright;
     color: white;
     padding: 10px;
@@ -119,3 +188,6 @@ footer{
     align-self: center;
     text-align: center;
  }
+}
+
+

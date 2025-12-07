@@ -1,16 +1,24 @@
-Uzdevums: Izveidot pamata HTML tīmekļa vietnes struktūru ar galveno sadaļu, header, footer, navigācijas izvēlni un dažiem vienkāršiem elementiem.
+ Uzdevums: Karte (Card) ar hover efektiem
 
-Instrukcijas:
+Izveido stilizētu kartiņu (card) izkārtojumu, kas mainās, kad lietotājs uz tās uzbrauc ar peli (hover efekti). 
+Prasības:
 
     
-Izveido jaunu HTML failu, piemēram, index.html.
-Galvene (<header>):
-•    Pievieno header ar vietnes nosaukumu un navigācijas izvēlni, kas sastāv no saitēm uz “Home”, “About”, un “Contact” sadaļām.
-Galvenā sadaļa (<main>):
-•    Izveido galveno sadaļu ar vienu vai diviem virsrakstiem (<h1>, <h2>), īsu tekstu (<p>), un vienu attēlu (<img>).
-Sānu josla (<aside>):
-•    Pievieno sānu joslu ar īsu tekstu vai papildu informāciju, piemēram, saistītu rakstu sarakstu.
-Kājene (<footer>):
-•    Izveido footer ar pamatinformāciju, piemēram, autortiesību paziņojumu, un sociālo tīklu saites.
-Piešķir stilu ar CSS (pēc izvēles):
-•    Vari pievienot pamata CSS, lai stilizētu header, navigācijas joslu, galveno saturu, aside un footer. To var izdarīt vai nu pašā HTML failā, izmantojot <style>, vai izveidojot atsevišķu CSS failu.
+Izvietojums:
+•    Izveido lapu ar vismaz trim kartītēm, kas izvietotas rindā.
+•    Izmanto Flexbox vai CSS Grid, lai sakārtotu kartītes horizontāli un nodrošinātu responsivitāti.
+Stilizēšana:
+•    Katrā kartītē ir jābūt:
+•    Attēlam (piemēram, produktu bilde vai cita vizuāla informācija).
+•    Virsrakstam (piemēram, produkta nosaukums).
+•    Aprakstam (īss teksts).
+•    Poga (kas izskatās interaktīva).
+Hover efekts:
+•    Kad lietotājs uzbrauc ar peli uz kartītes, tai ir jāveic vizuālas izmaiņas (piemēram, jāizceļas no fona, jāmaina ēna vai jāveido krāsu pāreja).
+•    Poga kartītes apakšā maina krāsu vai izmēru, kad lietotājs to hoverē.
+CSS pārejas un animācijas:
+•    Pievieno CSS pārejas (transition) kartītei, lai hover efekti būtu gludi.
+•    Pielieto keyframes animācijas, lai kartīte “paceltos” vai izveidotu kādu citu vizuālu efektu.
+
+
+
