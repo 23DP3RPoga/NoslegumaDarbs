@@ -1,24 +1,20 @@
- Uzdevums: Karte (Card) ar hover efektiem
+Navigācijas izvēlne:
+ •    Pievieno vienkāršu izvēlni lapas augšpusē.
+ •    Izmanto CSS izkārtojumu (piemēram, Flexbox vai inline-block), lai izveidotu horizontālu navigācijas joslu.
+ •    Hover efekts navigācijas elementiem (pārbraucot ar peli, mainās fona krāsa vai fonta krāsa).
+dažādos ekrānos, piemēram, izmantojot media queries.
+   
+Navigācijas hover efekti:
+ •    Var pievienot krāsu pārejas vai animācijas navigācijas izvēlnes hover efektiem.
+Dark mode: Pievieno CSS Dark mode versiju, kur mainās izvēlnes un kartīšu krāsas.
 
-Izveido stilizētu kartiņu (card) izkārtojumu, kas mainās, kad lietotājs uz tās uzbrauc ar peli (hover efekti). 
-Prasības:
-
-    
-Izvietojums:
-•    Izveido lapu ar vismaz trim kartītēm, kas izvietotas rindā.
-•    Izmanto Flexbox vai CSS Grid, lai sakārtotu kartītes horizontāli un nodrošinātu responsivitāti.
-Stilizēšana:
-•    Katrā kartītē ir jābūt:
-•    Attēlam (piemēram, produktu bilde vai cita vizuāla informācija).
-•    Virsrakstam (piemēram, produkta nosaukums).
-•    Aprakstam (īss teksts).
-•    Poga (kas izskatās interaktīva).
-Hover efekts:
-•    Kad lietotājs uzbrauc ar peli uz kartītes, tai ir jāveic vizuālas izmaiņas (piemēram, jāizceļas no fona, jāmaina ēna vai jāveido krāsu pāreja).
-•    Poga kartītes apakšā maina krāsu vai izmēru, kad lietotājs to hoverē.
-CSS pārejas un animācijas:
-•    Pievieno CSS pārejas (transition) kartītei, lai hover efekti būtu gludi.
-•    Pielieto keyframes animācijas, lai kartīte “paceltos” vai izveidotu kādu citu vizuālu efektu.
-
-
-
+Pievieno Dropdown izvēlni:
+ •    Papildini esošo navigācijas izvēlni ar dropdown funkcionalitāti. Kad lietotājs pārbrauc ar peli pār izvēlnes elementu “Services”, jāparādās papildu apakšizvēlnei ar vairākām iespējām.
+Pievieno modālo logu (Modal):
+•    Pievieno iespēju, ka, klikšķinot uz kartītes pogas (“Learn More”), atveras modālais logs, kurā ir detalizētāka informācija par kartiņas saturu.
+Pievieno animāciju hover efektam:
+•    Pielieto CSS Keyframe animācijas, lai kartīšu hover efekti būtu vēl interesantāki. Piemēram, kartītes attēlam vajadzētu lēnām palielināties (zoom-in) vai mainīt izskatu.
+Pievieno gradientus un pārejas:
+•    Pievieno CSS gradientus kartītēm vai pogām, kas vizuāli uzlabo dizainu. Izmanto gradientu pārejas uz pogām hover efektos, lai mainītu pogas krāsu.
+Izveido responsīvu hamburgera izvēlni:
+•     Izveido hamburgera izvēlni, kas parādās mobilajās ierīcēs, aizstājot navigācijas joslu. Kad lietotājs klikšķina uz hamburgera ikonas, parādās izvelkamā izvēlne. 
