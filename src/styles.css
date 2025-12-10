@@ -194,6 +194,8 @@ main {
     grid-area: hero-image;
     margin: auto;
     max-width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #hero-image img {
