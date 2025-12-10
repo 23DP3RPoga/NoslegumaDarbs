@@ -4,7 +4,7 @@ let isDark = false;
 function darkModeToggle() {
     document.body.classList.toggle("dark-mode");
     isDark = !isDark;
-    document.getElementById("dark-mode-toggle").textContent = isDark ? "☼" : "⏾";
+    document.getElementById("dark-mode-toggle").textContent = isDark ? "☼" : "🌙";
 }
 
 function closeModal() {
