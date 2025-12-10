@@ -152,3 +152,97 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 });
+
+
+const API_KEY = "62a97f89be974c038e4e93e05498c127"; 
+const searchInput = document.getElementById("newsSearch");
+const searchBtn = document.getElementById("searchNewsBtn");
+const results = document.getElementById("news-results");
+const errorMsg = document.getElementById("news-error");
+const historyList = document.getElementById("history-list");
+
+
+function loadHistory() {
+    let history = JSON.parse(localStorage.getItem("newsHistory")) || [];
+    historyList.innerHTML = "";
+
+    history.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item;
+        li.onclick = () => fetchNews(item);
+        historyList.appendChild(li);
+    });
+}
+
+function saveToHistory(query) {
+    let history = JSON.parse(localStorage.getItem("newsHistory")) || [];
+
+    // remove duplicates
+    history = history.filter(item => item !== query);
+
+    history.unshift(query);
+
+    if (history.length > 5) history.pop(); 
+
+    localStorage.setItem("newsHistory", JSON.stringify(history));
+    loadHistory();
+}
+
+
+async function fetchNews(query) {
+    if (!query) return;
+
+    results.innerHTML = "";
+    errorMsg.style.display = "none";
+
+    const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("API error");
+        }
+
+        const data = await response.json();
+
+        if (!data.articles || data.articles.length === 0) {
+            errorMsg.style.display = "block";
+            return;
+        }
+
+        saveToHistory(query);
+
+        data.articles.slice(0, 10).forEach(article => {
+            const card = document.createElement("div");
+            card.classList.add("news-card");
+
+            card.innerHTML = `
+                <img src="${article.urlToImage || 'https://via.placeholder.com/300'}">
+                <h3>${article.title}</h3>
+                <p>${article.description || "No description available."}</p>
+                <a href="${article.url}" target="_blank">Read more</a>
+            `;
+
+            results.appendChild(card);
+        });
+
+    } catch (err) {
+        errorMsg.style.display = "block";
+    }
+}
+
+// ===== EVENT LISTENERS =====
+searchBtn.addEventListener("click", () => {
+    const query = searchInput.value.trim();
+    fetchNews(query);
+});
+
+searchInput.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        fetchNews(searchInput.value.trim());
+    }
+});
+
+
+loadHistory();

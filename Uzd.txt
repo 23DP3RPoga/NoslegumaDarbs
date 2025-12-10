@@ -1,9 +1,19 @@
-Uzdevums 2: Satura filtrs (Search / Filter funkcija)
+Izveidot informācijas paneli (Dashboard), kas saņem datus no publiska API un tos attēlo kartītēs vai tabulā.
+API izvēle (viens no variantiem)
+📰 NewsAPI – ziņas
+Vai kādu citu brīvi pieejamu API
 
-Izveidot meklēšanas funkciju, kas ļauj lietotājam atrast konkrētas kartītes pēc to virsraksta vai teksta.
+Uzdevumi
+JavaScript funkcionalitāte:
 
-Lapas augšdaļā pievieno meklēšanas lauku.
-Katrā kartītē ir redzams nosaukums vai teksts, pēc kura notiek meklēšana.
-Kad lietotājs raksta meklēšanas laukā, tiek parādītas tikai tās kartītes, kas atbilst ievadītajam tekstam.
-Kartītes, kas neatbilst meklēšanas vārdam, tiek paslēptas.
-Pārbaudi, lai meklēšana notiek uzreiz, kamēr lietotājs raksta, un būtu nejūtīga pret lielajiem/mazajiem burtiem.
+*Izsauc fetch() uz izvēlēto API ar lietotāja ievadi.
+*Pārbaudi, vai API atbilde ir veiksmīga (response.ok).
+*Iegūtos datus parādi lapā kā kartītes:
+piemēram, laikapstākļi – temperatūra, apraksts, ikona;
+vai ziņas – virsraksts, bilde, saite uz rakstu.
+*Ja dati nav atrasti – parādi kļūdas paziņojumu (“Dati nav pieejami”).
+*Nodrošini, ka meklēšanas vēsture tiek saglabāta localStorage (pēdējie 3–5 meklējumi).
+Stilizācija (CSS):
+
+*Izmanto esošos hover efektus un “card layout” no iepriekšējiem uzdevumiem.
+*Pievieno vienkāršu fade-in animāciju datu ielādei.
