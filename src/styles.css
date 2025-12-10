@@ -274,10 +274,29 @@ footer ul {
     display: block;
 }
 
-/* ===== MODAL ===== */
+
+/*  MODAL  */
 .modal {
     position: relative;
     display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: var(--footer-card-bg);
+    color: var(--text);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .close {
@@ -285,10 +304,10 @@ footer ul {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
-
-/* ===== CARD SECTION ===== */
+/*  Cards  */
 #card-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -327,7 +346,7 @@ footer ul {
     animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Hover effect - lift up 10px */
+
 .card:hover {
     transform: translateY(-100px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.521);
@@ -382,38 +401,9 @@ body.dark-mode .card:hover {
     background-color: var(--footer-bg);
 }
 
-/* ===== MODAL ===== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
 
-.modal-content {
-    background-color: var(--footer-card-bg);
-    color: var(--text);
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
 
-.close {
-    color: #e90a0a;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* ===== Media queries ===== */
+/*  Media queries  */
 
 @media (max-width: 768px) {
     header {
@@ -463,10 +453,10 @@ body.dark-mode .card:hover {
     }
     
     #nav-buttons #dark-mode-toggle {
-        color: var(--toggle);
-        text-shadow: none;
-        border: none;
-        background-color: transparent;
+    color: var(--toggle);
+    text-shadow: none;
+    border: none;
+    background-color: transparent;
     }
     
     #hero-section {
@@ -517,4 +507,134 @@ body.dark-mode .card:hover {
     .card {
         max-width: 100%;
     }
+
+/* Form  */
 }
+
+#form {
+    max-width: 500px;
+    margin: 10vh auto;
+    padding: 40px;
+    background: var(--footer-card-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+#form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: var(--text);
+}
+
+#form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+#form input,
+#form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: border-color 0.3s ease;
+}
+
+#form input:focus,
+#form textarea:focus {
+    outline: none;
+    border-color: #3C6FE8;
+}
+
+#form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #3C6FE8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#form button:hover {
+    background-color: #2654c9;
+}
+
+
+#form input.error,
+#form textarea.error {
+    border-color: #e74c3c;
+    animation: shake 0.3s;
+}
+
+#form .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: -15px;
+    display: none;
+}
+
+#form .error-message.show {
+    display: block;
+}
+
+
+#form .success-box {
+    display: none;
+    padding: 20px;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#form .success-box.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+body.dark-mode #form input,
+body.dark-mode #form textarea {
+    border-color: #444;
+}
+
+body.dark-mode #form input:focus,
+body.dark-mode #form textarea:focus {
+    border-color: #5c8fff;
+}
+

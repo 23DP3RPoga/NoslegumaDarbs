@@ -1,20 +1,10 @@
-Navigācijas izvēlne:
- •    Pievieno vienkāršu izvēlni lapas augšpusē.
- •    Izmanto CSS izkārtojumu (piemēram, Flexbox vai inline-block), lai izveidotu horizontālu navigācijas joslu.
- •    Hover efekts navigācijas elementiem (pārbraucot ar peli, mainās fona krāsa vai fonta krāsa).
-dažādos ekrānos, piemēram, izmantojot media queries.
-   
-Navigācijas hover efekti:
- •    Var pievienot krāsu pārejas vai animācijas navigācijas izvēlnes hover efektiem.
-Dark mode: Pievieno CSS Dark mode versiju, kur mainās izvēlnes un kartīšu krāsas.
+Uzdevums 1: Formas validācija ar JavaScript
 
-Pievieno Dropdown izvēlni:
- •    Papildini esošo navigācijas izvēlni ar dropdown funkcionalitāti. Kad lietotājs pārbrauc ar peli pār izvēlnes elementu “Services”, jāparādās papildu apakšizvēlnei ar vairākām iespējām.
-Pievieno modālo logu (Modal):
-•    Pievieno iespēju, ka, klikšķinot uz kartītes pogas (“Learn More”), atveras modālais logs, kurā ir detalizētāka informācija par kartiņas saturu.
-Pievieno animāciju hover efektam:
-•    Pielieto CSS Keyframe animācijas, lai kartīšu hover efekti būtu vēl interesantāki. Piemēram, kartītes attēlam vajadzētu lēnām palielināties (zoom-in) vai mainīt izskatu.
-Pievieno gradientus un pārejas:
-•    Pievieno CSS gradientus kartītēm vai pogām, kas vizuāli uzlabo dizainu. Izmanto gradientu pārejas uz pogām hover efektos, lai mainītu pogas krāsu.
-Izveido responsīvu hamburgera izvēlni:
-•     Izveido hamburgera izvēlni, kas parādās mobilajās ierīcēs, aizstājot navigācijas joslu. Kad lietotājs klikšķina uz hamburgera ikonas, parādās izvelkamā izvēlne. 
+Izveidot kontaktformu, kas pārbauda ievades laukus un nodrošina, ka forma tiek iesniegta tikai tad, ja visi dati ir derīgi.
+
+Izveido formu ar laukiem – vārds, e-pasts un ziņojums.
+Nodrošini, ka visi lauki ir obligāti aizpildāmi.
+Pārbaudi, vai e-pasta adrese ir derīgā formātā.
+Ja kāds no laukiem nav aizpildīts vai e-pasta formāts nav pareizs, parādi kļūdas paziņojumu.
+Kļūdas paziņojums tiek parādīts ar nelielu vizuālu efektu (piemēram, krāsas maiņu vai īsu animāciju).
+Kad visi dati ir pareizi ievadīti, parādi paziņojumu, ka forma ir veiksmīgi iesniegta.

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Web</title>
+</head>
+<body>
+    <header> 
+        <div id="logo-container">
+            <h1 id="logo">Logo</h1>
+        </div>
+        
+        <button id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <div id="nav-buttons">
+            <button><a href="#">Home</a></button>
+            <button><a href="#">About</a></button>
+            <button><a href="#">Contact</a></button>
+            <div class="dropdown">
+                <button class="menu">Dropdown Menu</button>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+            <button id="dark-mode-toggle" onclick="darkModeToggle()">⏾</button>
+        </div>
+    </header>   
+    
+    <main>
+        <div id="form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <span class="error-message" id="name-error"></span>
+                </div>
+                
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+            
+            <div class="success-box" id="success-box">
+                ✓ Form successfully submitted!
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="links">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="socials">
+            <ul>
+                <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+        </div>
+        <div id="copyright">
+            &copy; 2025 My Website
+        </div>
+    </footer>
+    
+    <script src="src/script.js"></script>
+</body>
+</html>
