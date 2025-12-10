@@ -6,19 +6,18 @@
     <link rel="stylesheet" href="src/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     <title>Web</title>
 </head>
-<body >
-    <header> 
-             <div id="logo-container">
+<body>
+
+<header> 
+    <div id="logo-container">
         <h1 id="logo">Logo</h1>
     </div>
     
     <button id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </button>
     
     <div id="nav-buttons">
@@ -26,77 +25,93 @@
         <button><a href="#">About</a></button>
         <button><a href="contact.html">Contact</a></button>
         <div class="dropdown">
-        <button class="menu">Dropdown Menu</button>
-        <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <button class="menu">Dropdown Menu</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
         </div>
-    </div>
         <button id="dark-mode-toggle" onclick="darkModeToggle()">⏾</button>
     </div>
-    </header>   
-    <main>
-        <section id="hero-section">
-            <div id="hero-text"> 
-                <h1>Welcome to our website!</h1>
-                <p>This is a sample hero section.</p>
-            </div>
-           <div id="hero-image">
-                <img src="" alt="Hero Image">
-        </div>
-        </section>
-        <section id="card-section">
-                <div class="card" id="card1">
-                    <h2>Card Title 1</h2>
-                    <img src="src/images/pexels-sataz-34907670.jpg">
-                    <p>Some description for card 1.</p>
-                    <button onclick="openModal()" id="LearnMore">Learn More</button>
-                </div>
-                <div class="card" id="card2">
-                    <h2>Card Title 2</h2>
-                    <img onclick="" src="src/images/pexels-sataz-34907670.jpg">
-                    <p>Some description for card 2.</p>
-                    <button onclick="openModal()" id="LearnMore">Learn More</button>
-                </div>
-                <div class="card" id="card3">
-                    <h2>Card Title 3</h2>
-                    <img src="src/images/pexels-sataz-34907670.jpg">
-                    <p>Some description for card 3.</p>
-                     <button onclick="openModal()" id="LearnMore">Learn More</button>
-                </div>
-        </section>
-        <div id="modal" class="modal">    
-            <div class="modal-content">
-                <span onclick="closeModal()" class="close">&times;</span>
-                <p>Text...</p> 
-            </div>
-        </div>
-    </main>
+</header>   
 
-    <footer>
-        <div id="links">
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
+<main>
+    <section id="hero-section">
+        <div id="hero-text"> 
+            <h1>Welcome to our website!</h1>
+            <p>This is a sample hero section.</p>
         </div>
-        <div id="socials">
-            <ul>
+        <div id="hero-image">
+            <img src="" alt="Hero Image">
+        </div>
+    </section>
+    
+  
+        <section id="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Search cards..."
+                >
+                <span id="search-results"></span>
+            </div>
+        </section>
+    
+ 
+
+    <section id="card-section">
+        <div class="card">
+            <h2>Card Title 1</h2>
+            <img src="src/images/pexels-sataz-34907670.jpg" alt="Card 1">
+            <p>Some description for card 1.</p>
+            <button onclick="openModal()">Learn More</button>
+        </div>
+        
+        <div class="card">
+            <h2>Ctest 2</h2>
+            <img src="src/images/pexels-sataz-34907670.jpg" alt="Card 2">
+            <p>test</p>
+            <button onclick="openModal()">Learn More</button>
+        </div>
+        
+        <div class="card">
+            <h2>Card Title 3</h2>
+            <img src="src/images/pexels-sataz-34907670.jpg" alt="Card 3">
+            <p>Some description for card 3.</p>
+            <button onclick="openModal()">Learn More</button>
+        </div>
+    </section>
+    
+    <div id="modal" class="modal">    
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <p>Text...</p> 
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div id="links">
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="socials">
+        <ul>
             <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
             <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
             <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-            </ul>
-        </div>
-        <div id="copyright">
-            &copy; 2025 My Website
-        </div>
-        
-    </footer>
-    <script src="src/script.js"></script>
+        </ul>
+    </div>
+    <div id="copyright">
+        &copy; 2025 My Website
+    </div>
+</footer>
 
-   
-
+<script src="src/script.js"></script>
 </body>
 </html>

@@ -1,10 +1,9 @@
-Uzdevums 1: Formas validācija ar JavaScript
+Uzdevums 2: Satura filtrs (Search / Filter funkcija)
 
-Izveidot kontaktformu, kas pārbauda ievades laukus un nodrošina, ka forma tiek iesniegta tikai tad, ja visi dati ir derīgi.
+Izveidot meklēšanas funkciju, kas ļauj lietotājam atrast konkrētas kartītes pēc to virsraksta vai teksta.
 
-Izveido formu ar laukiem – vārds, e-pasts un ziņojums.
-Nodrošini, ka visi lauki ir obligāti aizpildāmi.
-Pārbaudi, vai e-pasta adrese ir derīgā formātā.
-Ja kāds no laukiem nav aizpildīts vai e-pasta formāts nav pareizs, parādi kļūdas paziņojumu.
-Kļūdas paziņojums tiek parādīts ar nelielu vizuālu efektu (piemēram, krāsas maiņu vai īsu animāciju).
-Kad visi dati ir pareizi ievadīti, parādi paziņojumu, ka forma ir veiksmīgi iesniegta.
+Lapas augšdaļā pievieno meklēšanas lauku.
+Katrā kartītē ir redzams nosaukums vai teksts, pēc kura notiek meklēšana.
+Kad lietotājs raksta meklēšanas laukā, tiek parādītas tikai tās kartītes, kas atbilst ievadītajam tekstam.
+Kartītes, kas neatbilst meklēšanas vārdam, tiek paslēptas.
+Pārbaudi, lai meklēšana notiek uzreiz, kamēr lietotājs raksta, un būtu nejūtīga pret lielajiem/mazajiem burtiem.

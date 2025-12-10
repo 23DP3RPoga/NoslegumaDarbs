@@ -1,147 +1,154 @@
-
-let toggle = false;
+// dark mode stuff
+let isDark = false;
 
 function darkModeToggle() {
     document.body.classList.toggle("dark-mode");
-    toggle = !toggle;
-    
-    const toggleBtn = document.getElementById("dark-mode-toggle");
-    toggleBtn.textContent = toggle ? "☼" : "⏾";
-
-
-
+    isDark = !isDark;
+    document.getElementById("dark-mode-toggle").textContent = isDark ? "☼" : "⏾";
 }
+
 function closeModal() {
-    const modal = document.getElementById("modal");
-    if (modal) {
-        modal.style.display = "none";
-    }
+    document.getElementById("modal").style.display = "none";
 }
 
 function openModal() {
-    const modal = document.getElementById("modal");
-    if (modal) {
-        modal.style.display = "block";
-    }
-}    
+    document.getElementById("modal").style.display = "block";
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-
-
-
-    const cards = document.querySelectorAll('.card');
-    const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px'
-    };
+document.addEventListener('DOMContentLoaded', function() {
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    // cards fade in when you scroll to them
+    let cards = document.querySelectorAll('.card');
+    let observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
             } 
         });
-    }, observerOptions);
+    }, {
+        threshold: 0.2
+    });
     
-    cards.forEach(card => observer.observe(card));
+    for(let i = 0; i < cards.length; i++) {
+        observer.observe(cards[i]);
+    }
     
-
-    const hamburger = document.getElementById('hamburger');
-    const navButtons = document.getElementById('nav-buttons');
+    // hamburger menu
+    let hamburger = document.getElementById('hamburger');
+    let navButtons = document.getElementById('nav-buttons');
     
-    if (hamburger && navButtons) {
-        hamburger.addEventListener('click', (e) => {
+    if(hamburger) {
+        hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
             hamburger.classList.toggle('active');
             navButtons.classList.toggle('active');
         });
-        
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navButtons.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navButtons.classList.remove('active');
-            }
-        });
     }
     
+  
+   
+   const searchInput = document.getElementById('searchInput');
+    const kartinas = document.querySelectorAll('.card');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+
+            kartinas.forEach(card => {
+                const title = card.querySelector('h2')?.textContent.toLowerCase() || "";
+                const description = card.querySelector('p')?.textContent.toLowerCase() || "";
+
+                const isVisible =
+                    title.includes(searchTerm) ||
+                    description.includes(searchTerm);
+
+                card.style.display = isVisible ? 'block' : 'none';
+
+                // animations
+                if (isVisible) {
+                    card.classList.add('fade-in');
+                    card.classList.remove('fade-out');
+                } else {
+                    card.classList.add('fade-out');
+                    card.classList.remove('fade-in');
+                }
+            });
+        });
+    }
+
     
-    const form = document.getElementById('contactForm');
+    // form validation - basic stuff
+    let form = document.getElementById('contactForm');
+    let nameInput = document.getElementById('name');
+    let emailInput = document.getElementById('email');
+    let messageInput = document.getElementById('message');
+    let successBox = document.getElementById('success-box');
     
-    if (form) {
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const messageInput = document.getElementById('message');
-        const successBox = document.getElementById('success-box');
-        
-        form.addEventListener('submit', (e) => {
+    if(form) {
+        form.onsubmit = function(e) {
             e.preventDefault();
             
-            
-            clearAllErrors();
+            // hide old errors
+            let errors = document.querySelectorAll('.error-message');
+            for(let i = 0; i < errors.length; i++) {
+                errors[i].style.display = 'none';
+            }
+            nameInput.classList.remove('error');
+            emailInput.classList.remove('error');
+            messageInput.classList.remove('error');
             successBox.classList.remove('show');
             
-            let isValid = true;
+            let hasError = false;
             
-           
-            if (nameInput.value.trim() === '') {
-                showError(nameInput, 'name-error', 'Name is required!');
-                isValid = false;
+            // check name
+            if(nameInput.value == '' || nameInput.value.length < 2) {
+                nameInput.classList.add('error');
+                document.getElementById('name-error').textContent = 'Please enter your name';
+                document.getElementById('name-error').style.display = 'block';
+                hasError = true;
             }
             
-            
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (emailInput.value.trim() === '') {
-                showError(emailInput, 'email-error', 'Email is required!');
-                isValid = false;
-            } else if (!emailPattern.test(emailInput.value.trim())) {
-                showError(emailInput, 'email-error', 'Please enter a valid email address!');
-                isValid = false;
+            // check email - just look for @ sign
+            if(emailInput.value == '' || emailInput.value.indexOf('@') == -1) {
+                emailInput.classList.add('error');
+                document.getElementById('email-error').textContent = 'Please enter a valid email';
+                document.getElementById('email-error').style.display = 'block';
+                hasError = true;
             }
             
-            
-            if (messageInput.value.trim() === '') {
-                showError(messageInput, 'message-error', 'Message is required!');
-                isValid = false;
-            } else if (messageInput.value.trim().length < 10) {
-                showError(messageInput, 'message-error', 'Message must contain at least 10 characters long!');
-                isValid = false;
+            // check message
+            if(messageInput.value == '' || messageInput.value.length < 10) {
+                messageInput.classList.add('error');
+                document.getElementById('message-error').textContent = 'Message should be at least 10 characters';
+                document.getElementById('message-error').style.display = 'block';
+                hasError = true;
             }
             
-           
-            if (isValid) {
+            // show success if everything is ok
+            if(!hasError) {
                 form.style.display = 'none';
                 successBox.classList.add('show');
                 
-                setTimeout(() => {
-                    form.reset();
+                // reset after 3 seconds
+                setTimeout(function() {
+                    nameInput.value = '';
+                    emailInput.value = '';
+                    messageInput.value = '';
                     form.style.display = 'block';
                     successBox.classList.remove('show');
                 }, 3000);
             }
-        });
+        };
         
-        function showError(input, errorId, message) {
-            input.classList.add('error');
-            const errorElement = document.getElementById(errorId);
-            errorElement.textContent = message;
-            errorElement.classList.add('show');
-        }
-        
-        function clearAllErrors() {
+        // remove error styling when user starts typing
+        nameInput.oninput = function() {
             nameInput.classList.remove('error');
+        };
+        emailInput.oninput = function() {
             emailInput.classList.remove('error');
+        };
+        messageInput.oninput = function() {
             messageInput.classList.remove('error');
-            
-            document.querySelectorAll('.error-message').forEach(el => {
-                el.classList.remove('show');
-                el.textContent = '';
-            });
-        }
-        
-        
-        nameInput.addEventListener('input', () => nameInput.classList.remove('error'));
-        emailInput.addEventListener('input', () => emailInput.classList.remove('error'));
-        messageInput.addEventListener('input', () => messageInput.classList.remove('error'));
+        };
     }
 });
